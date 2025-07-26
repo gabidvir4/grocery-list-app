@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self';">
+    <title>My Grocery List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛒 My Grocery List</h1>
+        </header>
+        
+        <form id="add-item-form" class="add-form">
+            <div class="form-group">
+                <input type="text" id="item-name" placeholder="Enter grocery item..." maxlength="100" required>
+                <input type="number" id="item-quantity" placeholder="Qty" min="1" max="9999" value="1" required>
+                <button type="submit">Add Item</button>
+            </div>
+        </form>
+        
+        <div id="grocery-list" class="grocery-list">
+            <div id="empty-state" class="empty-state">
+                <p>Your grocery list is empty. Add your first item above!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

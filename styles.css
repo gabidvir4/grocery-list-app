@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+header {
+    background: #4a5568;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.add-form {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#item-name {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+#item-name:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#item-quantity {
+    width: 80px;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    transition: border-color 0.2s;
+}
+
+#item-quantity:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    padding: 12px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background: #5a67d8;
+}
+
+.grocery-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.empty-state {
+    padding: 40px 20px;
+    text-align: center;
+    color: #718096;
+    font-size: 18px;
+}
+
+.grocery-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f7fafc;
+    transition: background-color 0.2s;
+}
+
+.grocery-item:hover {
+    background: #f7fafc;
+}
+
+.item-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.item-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #2d3748;
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.item-name:hover {
+    background: #edf2f7;
+}
+
+.item-name.editing {
+    background: #edf2f7;
+    border: 2px solid #667eea;
+    outline: none;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #edf2f7;
+    color: #4a5568;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.quantity-btn:hover {
+    background: #e2e8f0;
+}
+
+.quantity-display {
+    font-size: 16px;
+    font-weight: 600;
+    color: #667eea;
+    min-width: 30px;
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.quantity-display:hover {
+    background: #edf2f7;
+}
+
+.quantity-display.editing {
+    background: #edf2f7;
+    border: 2px solid #667eea;
+    outline: none;
+}
+
+.item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.delete-btn {
+    background: #e53e3e;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 18px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn:hover {
+    background: #c53030;
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    .form-group {
+        flex-direction: column;
+    }
+    
+    #item-name, #item-quantity {
+        width: 100%;
+    }
+    
+    .grocery-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .item-info {
+        justify-content: space-between;
+    }
+    
+    .item-actions {
+        align-self: flex-end;
+    }
+}
